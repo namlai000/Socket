@@ -29,7 +29,9 @@ class Run extends Thread {
 
         try {
             servsocket = new ServerSocket(25565);
-            j.append("Server is running\n");
+            if (j.getText().isEmpty()) {
+                j.append("Server is running\n");
+            }
             Socket client = servsocket.accept();
             if (client != null) {
                 j.append("File Sending\n");
